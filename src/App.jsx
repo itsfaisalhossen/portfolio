@@ -10,7 +10,7 @@ import { Oval } from "react-loader-spinner";
 
 // Fetch projects
 const fetchProjects = async () => {
-  const result = await fetch("/projects.json");
+  const result = await fetch("./projects.json");
   return result.json();
 };
 
