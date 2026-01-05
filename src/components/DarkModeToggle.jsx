@@ -8,7 +8,7 @@ const DarkModeToggle = () => {
 
   useEffect(() => {
     const root = document.documentElement;
-    if (!darkMode) {
+    if (darkMode) {
       root.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
@@ -23,7 +23,7 @@ const DarkModeToggle = () => {
         onClick={() => SetDarkMode((prev) => !prev)}
         className="p-1.5 rounded-md text-black dark:text-white cursor-pointer shadow back-drop-b"
       >
-        {darkMode ? <MoonStar size={18} /> : <Sun size={18} />}
+        {darkMode ? <Sun size={18} /> : <MoonStar size={18} />}
       </button>
     </div>
   );

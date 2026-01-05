@@ -69,15 +69,41 @@ const Footer = () => {
                 Find me on
               </p>
               <div className="flex gap-4">
-                <div className="p-3  bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg cursor-pointer dark:hover:bg-primary hover:bg-red-100 hover:text-black [#251b4a] transition-colors">
+                <a
+                  href="https://github.com/itsfaisalhossen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="p-3 bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg 
+               dark:hover:bg-primary hover:bg-red-100 hover:text-black 
+               transition-colors"
+                >
                   <Github size={20} />
-                </div>
-                <div className="p-3  bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg cursor-pointer dark:hover:bg-primary hover:bg-red-100 hover:text-black [#251b4a] transition-colors">
+                </a>
+
+                <a
+                  href="https://www.facebook.com/itsfaisalhossen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook profile"
+                  className="p-3 bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg 
+               dark:hover:bg-primary hover:bg-red-100 hover:text-black 
+               transition-colors"
+                >
                   <Facebook size={20} />
-                </div>
-                <div className="p-3  bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg cursor-pointer dark:hover:bg-primary hover:bg-red-100 hover:text-black [#251b4a] transition-colors">
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/itsfaisalhossen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                  className="p-3 bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg 
+               dark:hover:bg-primary hover:bg-red-100 hover:text-black 
+               transition-colors"
+                >
                   <Linkedin size={20} />
-                </div>
+                </a>
               </div>
             </div>
           </div>
