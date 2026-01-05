@@ -74,7 +74,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
-                  className="p-3 bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg 
+                  className="p-3 bg-gray-100 back-drop-b dark:text-white rounded-lg 
                dark:hover:bg-primary hover:bg-red-100 hover:text-black 
                transition-colors"
                 >
@@ -86,7 +86,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook profile"
-                  className="p-3 bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg 
+                  className="p-3 bg-gray-100 back-drop-b dark:text-white rounded-lg 
                dark:hover:bg-primary hover:bg-red-100 hover:text-black 
                transition-colors"
                 >
@@ -98,7 +98,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
-                  className="p-3 bg-gray-100 dark:bg-primary-dark dark:text-white rounded-lg 
+                  className="p-3 bg-gray-100 back-drop-b dark:text-white rounded-lg 
                dark:hover:bg-primary hover:bg-red-100 hover:text-black 
                transition-colors"
                 >
@@ -108,7 +108,7 @@ const Footer = () => {
             </div>
           </div>
           {/* Right Side: Contact Form */}
-          <div className="rounded-xl p-5 lg:p-8 md:p-6 back-drop-b bg-primary dark:bg-primary-dark">
+          <div className="rounded-xl p-5 lg:p-8 md:p-6 back-drop-b bg-primary ">
             <form className="space-y-4 flex flex-col justify-between">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
@@ -133,7 +133,7 @@ const Footer = () => {
                 placeholder="Your Message"
                 required
                 rows="6"
-                className="w-full back-drop-b text-black dark:text-white rounded-lg p-3 outline-none focus:border-purple-500 transition-colors resize-none"
+                className="w-full back-drop-b bg-white dark:bg-[#0f0f1a] text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-white rounded-lg p-3 outline-none focus:border-purple-500 transition-colors resize-none"
               ></textarea>
 
               <button className="w-full mt-8 back-drop-b p-3 dark:bg-white rounded-lg flex items-center justify-center gap-2 font-semibold text-black dark:text-white">
@@ -143,8 +143,8 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="py-12 w-[320px] flex mx-auto items-center opacity-40 justify-center">
-          <p className="text-center dark:text-white/40 text-xs back-drop-b p-2.5 px-3.5 rounded-full">
+        <div className="py-12 w-[320px] flex mx-auto items-center opacity-60 justify-center">
+          <p className="text-center dark:text-white/60 text-xs back-drop-b p-2.5 px-3.5 rounded-full">
             All right recived by faisalhossen
           </p>
         </div>

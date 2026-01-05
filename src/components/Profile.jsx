@@ -59,15 +59,16 @@ const Profile = () => {
                 adaptability, and business growth.
               </p>
               <div className="flex items-center justify-between gap-5">
-                <button
-                  className="flex gap-2 cursor-pointer items-center dark:!bg-white/80 dark:!text-black 
-            py-2.5 px-3.5  back-drop-b   rounded-lg font-medium text-xs md:text-sm"
+                <a
+                  id="contact"
+                  className="flex gap-2 cursor-pointer items-center dark:bgwhite/80! dark:text-white! text-xs
+            py-2.5 px-3.5  rounded-full  roundedlg font-medium back-drop-b opacity-60 "
                 >
-                  <IoMailUnreadOutline size={22} />
-                  Get in Touch
-                </button>
+                  {/* <IoMailUnreadOutline size={22} /> */}
+                  FRONTEND DEVELOPER
+                </a>
                 <button
-                  className="flex gap-2 cursor-pointer items-center dark:!bg-white/80 dark:!text-black
+                  className="flex gap-2 cursor-pointer items-center dark:bg-white/80! dark:text-black!
             py-2.5 px-3.5  back-drop-b   rounded-lg font-medium text-xs md:text-sm  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ..."
                 >
                   CV Resume
