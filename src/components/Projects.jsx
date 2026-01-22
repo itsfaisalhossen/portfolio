@@ -41,7 +41,7 @@ const Projects = ({ fetchPromise }) => {
           </div>
 
           {/* Project Cards */}
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb20">
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {filteredData.map((sProject, idx) => (
               <div key={`${toggleStatus}-${idx}`} className="animate-project">
                 <ProjectCard sProject={sProject} />

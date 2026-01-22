@@ -45,26 +45,33 @@ const Navbar = () => {
     }
   };
 
-  const links = navItem.map((item, idx) => (
-    <li key={idx} className="relative">
-      <button
-        onClick={() => handleNavClick(item.link, item.name)}
-        className={`transition-all cursor-pointer font-light dark:font-extralight duration-300 dark:text-white ${
-          active === item.name
-            ? "text-black dark:text-white"
-            : "hover:text-green500 dark:hover:text-white"
-        }`}
-      >
-        {item.name}
-      </button>
-      {/* underline */}
-      <span
-        className={`absolute left-0 -bottom-1 h-[1px] bg-black dark:bg-white transition-all duration-300 ${
-          active === item.name ? "w-full" : "w-0"
-        }`}
-      />
-    </li>
-  ));
+  // Links with icon fix
+  const links = navItem.map((item, idx) => {
+    const Icon = item.icon; // <-- fix: assign icon component
+
+    return (
+      <li key={idx} className="relative">
+        <button
+          onClick={() => handleNavClick(item.link, item.name)}
+          className={`transition-all flex items-center cursor-pointer font-light dark:font-extralight duration-300 dark:text-white ${
+            active === item.name
+              ? "text-black dark:text-white"
+              : "hover:text-green500 dark:hover:text-white"
+          }`}
+        >
+          <Icon size={18} className="inline-block mr-2" /> {/* fixed */}
+          {item.name}
+          {/* {item.name} */}
+        </button>
+        {/* underline */}
+        <span
+          className={`absolute left-0 -bottom-1 h-[1px] bg-black dark:bg-white transition-all duration-300 ${
+            active === item.name ? "w-full" : "w-0"
+          }`}
+        />
+      </li>
+    );
+  });
 
   return (
     <header
@@ -74,7 +81,7 @@ const Navbar = () => {
     >
       <Container>
         <nav
-          className={`w-full back-drop-b backdrop-blur-xl flex justify-between items-center border border-gray-300 rounded-xl p-3 transition-all duration-500 ${
+          className={`w-full back-drop-b backdrop-blur-sm flex justify-between items-center border border-gray-300 rounded-xl p-3 transition-all duration-500 ${
             isSticky ? "back-drop-b shadow-lg" : "bgtransparent"
           }`}
         >
@@ -91,10 +98,10 @@ const Navbar = () => {
 
           {/* Mobile */}
           <ul
-            className={`lg:hidden absolute left-0 w-full bg-primary dark:bg-primary-dark backdrop-blur-2xl  border rounded-xl transition-all duration-500 ${
+            className={`lg:hidden absolute left-0 w-full bg-primary dark:bg-primary-dark backdrop-blur-2xl border rounded-xl transition-all duration-500 ${
               open
-                ? "top-[85px] opacity-100 visible"
-                : "top-[-500px] opacity-0 invisible"
+                ? "top-21.25 opacity-100 visible"
+                : "-top-125 opacity-0 invisible"
             }`}
             style={{ height: "350px" }}
           >

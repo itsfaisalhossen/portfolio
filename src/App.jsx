@@ -4,9 +4,9 @@ import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-// import Services from "./components/Services";
-import Footer from "./components/Footer";
 import { Oval } from "react-loader-spinner";
+import Contact from "./components/Contact";
+import BackToTopButton from "./components/BackToTopButton";
 
 // Fetch projects
 const fetchProjects = async () => {
@@ -35,10 +35,12 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-primary dark:bg-primary-dark min-h-screen">
+    <div className="bg-primary dark:bg-primary-dark min-hscreen">
       <div className="space-y-32">
         <Navbar />
         <main id="profile" className="pt-44 md:pt-56 space-y-32">
+          <div id="profile-end" className="h-1"></div>
+          <BackToTopButton />
           <Profile />
           <Skills />
           <Suspense
@@ -50,8 +52,7 @@ const App = () => {
           >
             <Projects fetchPromise={fetchPromise} />
           </Suspense>
-          {/* <Services /> */}
-          <Footer />
+          <Contact />
         </main>
       </div>
     </div>

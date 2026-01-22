@@ -1,16 +1,68 @@
-# React + Vite
+# 💼 Personal Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Live Site:** https://itsfaisalhossen.github.io/portfolio/  
+📂 **GitHub Repository:** https://github.com/itsfaisalhossen/portfolio
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Portfolio Description
 
-## React Compiler
+A modern, minimal, and responsive **personal developer portfolio** designed to showcase my frontend skills, projects, and contact information.  
+Built with a **Single Page Application (SPA)** architecture, the portfolio focuses on smooth user experience, clean UI, and interactive animations.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎨 Minimal & modern UI design
+- ⚡ Built with React (Vite) for fast performance
+- 🧭 Single Page Application (SPA) experience
+- 🌀 Smooth scrolling using Lenis Smooth Scroll
+- 🧩 Parallax tilt animations for interactive sections
+- 📱 Fully responsive for all devices
+- 🧼 Clean, reusable, and maintainable code
+
+---
+
+## 🧱 Portfolio Sections
+
+- 🧑 Header
+- 👤 Profile
+- 🛠️ Skills
+- 📂 Projects
+- 📬 Contact
+
+---
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/itsfaisalhossen/portfolio.git
+   ```
+1. **Navigate to the project folder**
+
+   ```bash
+   cd portfolio
+   ```
+
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+1. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+# 🎯 Purpose
+
+## This project was created to:
+
+- Build a strong personal brand
+
+- Showcase frontend development skills
+
+- Present projects professionally
+
+- Support job and internship applications

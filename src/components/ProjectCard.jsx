@@ -2,7 +2,7 @@ import Tilt from "react-parallax-tilt";
 import { Github, SquareArrowOutUpRight } from "lucide-react";
 
 const ProjectCard = ({ sProject }) => {
-  const { title, image } = sProject;
+  const { title, image, liveLink, githubLink } = sProject;
   return (
     <Tilt
       glareEnable={true}
@@ -19,17 +19,17 @@ const ProjectCard = ({ sProject }) => {
         <div>
           <h1 className="text-[16px] font-normal">{title}</h1>
           {/* <p className="text-sm">{description}</p> */}
-          <div className="mt-8 flex justify-between gap-8 opacity-70">
+          <div className="mt-8 flex justify-between opacity-70">
             <a
               className="rounded-xl back-drop-b px-2.5 py-1.5 text-sm flex items-center gap-2 "
-              href="https://itsfaisalhossen.github.io/portfolio/"
+              href={liveLink}
               target="_blank"
             >
               Live <SquareArrowOutUpRight size={16} />
             </a>
             <a
               className="rounded-lg back-drop-b px2.5 p-1.5 text-xs flex items-center gap-2 "
-              href="https://github.com/itsfaisalhossen"
+              href={githubLink}
               target="_blank"
             >
               <Github size={16} />
