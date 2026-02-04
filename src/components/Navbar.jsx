@@ -113,12 +113,14 @@ const Navbar = () => {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <DarkModeToggle />
-            <button
-              onClick={() => handleNavClick("#contact", "Contact")}
-              className="hidden lg:flex bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-lg hover:scale-105 transition"
+            <div
+              onClick={() => handleNavClick("#contact")}
+              className="group hidden relative md:inline-flex transition-all hover:scale-105 items-center justify-center rounded-lg py-[1.5px] px-[2px] dark:bg-linear-to-r from-purple-500 to-indigo-600"
             >
-              Get in Touch
-            </button>
+              <button className="px-4 py-2 rounded-lg  bg-[#0F001F]   font-extralight text-white cursor-pointer">
+                Get in Touch
+              </button>
+            </div>
             {/* Mobile toggle */}
             <button
               onClick={() => setOpen(!open)}

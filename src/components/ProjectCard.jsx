@@ -2,7 +2,8 @@ import Tilt from "react-parallax-tilt";
 import { Github, SquareArrowOutUpRight } from "lucide-react";
 
 const ProjectCard = ({ sProject }) => {
-  const { title, image, liveLink, githubLink } = sProject;
+  const { title, image, liveLink, githubLink, technologies } = sProject;
+
   return (
     <Tilt
       glareEnable={true}
@@ -18,7 +19,18 @@ const ProjectCard = ({ sProject }) => {
         />
         <div>
           <h1 className="text-[16px] font-normal">{title}</h1>
+          <div className="text-xs font-extralight flex gap-1.5 flex-wrap mt-3">
+            {technologies.map((tgs, idx) => (
+              <p
+                key={idx}
+                className="border border-black/10 dark:border-white/20 backdrop-blur-xl px-1.5 py-0.5 rounded-md"
+              >
+                {tgs}
+              </p>
+            ))}
+          </div>
           {/* <p className="text-sm">{description}</p> */}
+          <div></div>
           <div className="mt-8 flex justify-between opacity-70">
             <a
               className="rounded-xl back-drop-b px-2.5 py-1.5 text-sm flex items-center gap-2 "

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const DarkModeToggle = () => {
   const [darkMode, SetDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark"
+    () => localStorage.getItem("theme") === "dark",
   );
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const DarkModeToggle = () => {
         onClick={() => SetDarkMode((prev) => !prev)}
         className="p-1.5 rounded-md text-black dark:text-white cursor-pointer shadow back-drop-b"
       >
-        {darkMode ? <Sun size={18} /> : <MoonStar size={18} />}
+        {darkMode ? <Sun size={16} /> : <MoonStar size={16} />}
       </button>
     </div>
   );

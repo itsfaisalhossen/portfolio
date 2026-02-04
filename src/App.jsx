@@ -36,9 +36,9 @@ const App = () => {
 
   return (
     <div className="bg-primary dark:bg-primary-dark min-hscreen">
-      <div className="space-y-32">
+      <div>
         <Navbar />
-        <main id="profile" className="pt-44 md:pt-56 space-y-32">
+        <main id="profile" className="pt-32 md:pt-44 space-y-32">
           <div id="profile-end" className="h-1"></div>
           <BackToTopButton />
           <Profile />
@@ -46,7 +46,7 @@ const App = () => {
           <Suspense
             fallback={
               <div className="flex items-center justify-center mt-12">
-                <Oval height={60} width={60} color="#000000" />
+                <Oval height={60} width={60} color="#0d0117" />
               </div>
             }
           >
