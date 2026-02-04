@@ -5,6 +5,12 @@
     "liveLink": "https://itsfaisalhossen.github.io/portfolio/",
     "githubLink": "https://github.com/itsfaisalhossen/portfolio",
     "projectType": "Frontend",
+    "technologies": [
+      "ReactVite",
+      "TailwindCSS",
+      "Lenis Smooth-Scroll",
+      "Parallax tilt"
+    ],
     "description": "Sleek, fast, responsive SaaS landing page with captivating conversions."
   },
   {
@@ -13,6 +19,13 @@
     "liveLink": "https://xorasaaspage.netlify.app/",
     "githubLink": "https://github.com/itsfaisalhossen/saas_landing_page",
     "projectType": "Frontend",
+    "technologies": [
+      "ReactVite",
+      "TailwindCSS",
+      "React Scroll",
+      "React Countup",
+      "React Slidedown"
+    ],
     "description": "Sleek, fast, responsive SaaS landing page with captivating conversions."
   },
   {
@@ -21,15 +34,30 @@
     "liveLink": "https://the-hero-io.netlify.app/",
     "githubLink": "https://github.com/itsfaisalhossen/hero-io-app-asign",
     "projectType": "Frontend",
+    "technologies": [
+      "ReactVite",
+      "TailwindCSS",
+      "Recharts",
+      "Sweetalert2",
+      "React Router"
+    ],
     "description": "Sleek, fast, responsive SaaS landing page with captivating conversions."
   },
-
   {
     "title": "FoodCircle – Community Food Sharing Platform",
     "image": "https://i.ibb.co.com/yBVqkMyf/food.jpg",
     "liveLink": "https://food-circle-8fa57.web.app/",
     "githubLink": "https://github.com/itsfaisalhossen/food-circle-client",
     "projectType": "FullStack",
+    "technologies": [
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "Firebase Auth",
+      "React Toast",
+      "ReactVite",
+      "TailwindCSS"
+    ],
     "description": "Sleek, fast, responsive SaaS landing page with captivating conversions."
   },
   {
@@ -38,6 +66,15 @@
     "liveLink": "https://red-unity-a9d52.web.app/",
     "githubLink": "https://github.com/itsfaisalhossen/redunity-frontend",
     "projectType": "FullStack",
+    "technologies": [
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "Firebase Auth",
+      "ReactVite",
+      "TailwindCSS",
+      "TanStack Query"
+    ],
     "description": "Sleek, fast, responsive SaaS landing page with captivating conversions."
   }
 ]
