@@ -2,61 +2,109 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import Container from "./Container";
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 const Contact = () => {
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_PUBLIC_KEY,
+      );
+      toast.success("Email sent successfully!.", {
+        style: {
+          border: "1px solid #858585",
+          padding: "8px 8px",
+          background: "#0d0117",
+          color: "#dedede",
+        },
+        iconTheme: {
+          primary: "#0d0117",
+          secondary: "#858585",
+        },
+      });
+      e.target.reset();
+    } catch (error) {
+      console.error("Email failed:", error);
+      alert("Something went wrong. Try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div id="contact">
       <Container>
         {/* Section Heading */}
-        <SectionTitle heading={"Start a Conversation"} subHeading={""} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+        <SectionTitle
+          heading={"Start a Conversation"}
+          subHeading={
+            "Have a project in mind or want to collaborate? Fill in the form or reach out directly — I'll get back to you within 24 hours."
+          }
+        />
+        <div className="flex flex-col md:flex-row gap-8 w-full">
           {/* Left Side: Contact Info */}
-          <div className="rounded-xl p-5 lg:p-8 md:p-6 back-drop-b bg-primary dark:bg-primary-dark">
-            <h2 className="text-2xl dark:text-white font-bold mb-8">
-              Get In Touch
-            </h2>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <MapPin
-                  className=" text-black dark:text-white mt-1"
-                  size={20}
-                />
-                <div>
-                  <p className="font-semibold text-black dark:text-white">
-                    Location
-                  </p>
-                  <p className="dark:text-gray-300 text-black text-sm">
-                    Dhaka, Bangladesh
-                  </p>
+          <div className="rounded-xl flex flex-col justify-between w-full md:w-[40%] p-5 lg:p-8 md:p-6 back-drop-b bg-primary dark:bg-primary-dark">
+            <div>
+              <h2 className="text-2xl syne-font dark:text-white font-bold mb-8">
+                Get In Touch
+              </h2>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <MapPin
+                    className=" text-black dark:text-white mt-1"
+                    size={20}
+                  />
+                  <div>
+                    <p className="font-semibold text-black dark:text-white">
+                      Location
+                    </p>
+                    <p className="dark:text-gray-300 text-black text-sm">
+                      Dhaka, Bangladesh
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <Phone className=" text-black dark:text-white mt-1" size={20} />
-                <div>
-                  <p className="font-semibold text-black dark:text-white">
-                    Phone
-                  </p>
-                  <p className="dark:text-gray-300 text-black text-sm">
-                    +8801775352158
-                  </p>
+                <div className="flex items-center gap-4">
+                  <Phone
+                    className=" text-black dark:text-white mt-1"
+                    size={20}
+                  />
+                  <div>
+                    <p className="font-semibold text-black dark:text-white">
+                      Phone
+                    </p>
+                    <p className="dark:text-gray-300 text-black text-sm">
+                      +8801775352158
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <Mail className=" text-black dark:text-white mt-1" size={20} />
-                <div>
-                  <p className="font-semibold text-black dark:text-white">
-                    Email
-                  </p>
-                  <p className="dark:text-gray-300 text-black text-sm">
-                    itsfaisalhossen@gmail.com
-                  </p>
+                <div className="flex items-center gap-4">
+                  <Mail
+                    className=" text-black dark:text-white mt-1"
+                    size={20}
+                  />
+                  <div>
+                    <p className="font-semibold text-black dark:text-white">
+                      Email
+                    </p>
+                    <p className="dark:text-gray-300 text-black text-sm">
+                      itsfaisalhossen@gmail.com
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-
             <div className="mt-16">
               <p className="text-sm uppercase tracking-wider mb-6 text-black font-medium dark:text-gray-300">
                 Find me on
@@ -101,44 +149,89 @@ const Contact = () => {
           </div>
 
           {/* Right Side: Contact Form */}
-          <div className="rounded-xl p-5 lg:p-8 md:p-6 back-drop-b bg-primary">
-            <form className="space-y-4 flex flex-col justify-between">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="rounded-xl w-full md:w-[60%] p-5 lg:p-8 md:p-6 back-drop-b bg-primary">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="space-y-4 flex flex-col justify-between"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols2 gap-4">
+                <div className="flex flex-col md:flex-row gap-3 justify-between">
+                  <div className="w-full">
+                    <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
+                      Full Name *
+                    </p>
+                    <input
+                      type="text"
+                      name="user_name"
+                      placeholder="Jhon Doe"
+                      required
+                      className="w-full back-drop-b dark:text-white rounded-lg text-sm py-3 px-2 outline-none focus:border-purple-500 transition-colors"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
+                      Email *
+                    </p>
+                    <input
+                      type="email"
+                      name="user_email"
+                      placeholder="jhon@example.com"
+                      required
+                      className="w-full back-drop-b dark:text-white rounded-lg text-sm py-3 px-2 outline-none focus:border-purple-500 transition-colors"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
+                  Subject *
+                </p>
                 <input
-                  type="text"
-                  placeholder="Your Name"
+                  type="subject"
+                  name="subject"
+                  placeholder="Project inquiry / Collaboration..."
                   required
-                  className="w-full back-drop-b dark:text-white rounded-lg p-3 outline-none focus:border-purple-500 transition-colors"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  required
-                  className="w-full back-drop-b dark:text-white rounded-lg p-3 outline-none focus:border-purple-500 transition-colors"
+                  className="w-full back-drop-b dark:text-white rounded-lg text-sm py-3 px-2 outline-none focus:border-purple-500 transition-colors"
                 />
               </div>
-              <input
-                type="text"
-                placeholder="Subject"
-                className="w-full back-drop-b dark:text-white rounded-lg p-3 outline-none focus:border-purple-500 transition-colors"
-              />
-              <textarea
-                placeholder="Your Message"
-                required
-                rows="6"
-                className="w-full back-drop-b bg-white dark:bg-[#0f0f1a] text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-white rounded-lg p-3 outline-none focus:border-purple-500 transition-colors resize-none"
-              ></textarea>
 
-              <button className="w-full mt-8 back-drop-b p-3 dark:bg-white rounded-lg flex items-center justify-center gap-2 font-semibold text-black dark:text-white">
-                <Send size={18} />
-                Send Message
+              <div>
+                <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
+                  Message *
+                </p>
+                <textarea
+                  placeholder="Tell me about your project or idea..."
+                  name="message"
+                  required
+                  rows="6"
+                  className="w-full dark:text-white back-drop-b placeholder:text-gray-500 dark:placeholder:text-white/60 rounded-lg text-sm py-2.5 px-2 outline-none focus:border-purple-500 transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full cursor-pointer mt-8 back-drop-b p-3 dark:bg-white rounded-lg flex items-center justify-center gap-2 font-semibold text-black dark:text-white syne-font"
+              >
+                {loading ? (
+                  <>
+                    <span className="animate-spin h-4 w-4 border-2 border-black border-t-transparent rounded-full"></span>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>
         </div>
         <div className="py-12 w-[320px] flex mx-auto items-center opacity-60 justify-center">
           <p className="text-center dark:text-white/60 text-xs back-drop-b p-2.5 px-3.5 rounded-full">
-            All right recived by faisal-hossen
+            © 2026 FaisalHossen. all rights reserved
           </p>
         </div>
       </Container>

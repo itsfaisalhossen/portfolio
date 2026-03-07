@@ -7,7 +7,7 @@ import { MapPin } from "lucide-react";
 const Profile = () => {
   return (
     <section>
-      <div className="dark:text-white/85 minh-screen">
+      <div className="dark:text-white/85 pt-24 md:pt-32  minh-screen">
         <Container>
           <div className="flex items-center justify-between">
             <div className=" flex gap-2.5 items-center  back-drop-b rounded-lg py-2   px-2.5 md:px-3">
@@ -68,10 +68,11 @@ const Profile = () => {
                   <span>Full Stack Web Developer (MERN)</span>
                 </p>
                 <a
-                  href="https://drive.google.com/file/d/12ZVmCz1gh-ykoJwUwREZfoRI_cvVvD0q/view?usp=sharing"
+                  // href="https://drive.google.com/file/d/12ZVmCz1gh-ykoJwUwREZfoRI_cvVvD0q/view?usp=sharing"
+                  href="https://drive.google.com/file/d/17fKhLih7OWTVk-zy_peQ4pWRwflz5KXJ/view?usp=sharing"
                   target="_blank"
                   className="flex gap-2 cursor-pointer items-center dark:bg-white! dark:text-black!
-            py-2 px-3.5  back-drop-b max-sm:w-full text-center justify-center rounded-lg font-medium text-xs md:text-sm  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ..."
+            py-2.5 px-3.5  back-drop-b max-sm:w-full text-center justify-center rounded-lg font-medium text-xs md:text-sm  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ..."
                 >
                   Download Resume
                   <div className="size-6 animate-bounce ...">

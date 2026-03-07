@@ -38,7 +38,7 @@ const App = () => {
     <div className="bg-primary dark:bg-primary-dark min-hscreen">
       <div>
         <Navbar />
-        <main id="profile" className="pt-32 md:pt-44 space-y-32">
+        <main id="profile" className="md:space-y-32 space-y-12">
           <div id="profile-end" className="h-1"></div>
           <BackToTopButton />
           <Profile />

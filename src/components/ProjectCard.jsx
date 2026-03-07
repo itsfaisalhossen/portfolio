@@ -19,7 +19,7 @@ const ProjectCard = ({ sProject }) => {
         />
         <div>
           <h1 className="text-[16px] font-normal">{title}</h1>
-          <div className="text-xs font-extralight flex gap-1.5 flex-wrap mt-3">
+          <div className="text-xs flex gap-1.5 flex-wrap mt-3">
             {technologies.map((tgs, idx) => (
               <p
                 key={idx}
