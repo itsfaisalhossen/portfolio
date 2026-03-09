@@ -45,23 +45,21 @@ const Navbar = () => {
     }
   };
 
-  // Links with icon fix
   const links = navItem.map((item, idx) => {
-    const Icon = item.icon; // <-- fix: assign icon component
+    const Icon = item.icon;
 
     return (
       <li key={idx} className="relative">
         <button
           onClick={() => handleNavClick(item.link, item.name)}
-          className={`transition-all flex items-center cursor-pointer font-light dark:font-extralight duration-300 dark:text-white ${
+          className={`transition-all flex items-center cursor-pointer font-normal text-sm duration-300 dark:text-white ${
             active === item.name
               ? "text-black dark:text-white"
-              : "hover:text-green500 dark:hover:text-white"
+              : "dark:hover:text-white dark:text-white/70"
           }`}
         >
-          <Icon size={18} className="inline-block mr-2" /> {/* fixed */}
+          <Icon size={18} className="inline-block mr-2" />
           {item.name}
-          {/* {item.name} */}
         </button>
         {/* underline */}
         <span
@@ -115,9 +113,9 @@ const Navbar = () => {
             <DarkModeToggle />
             <div
               onClick={() => handleNavClick("#contact")}
-              className="group hidden relative md:inline-flex transition-all hover:scale-105 items-center justify-center rounded-lg py-[1.5px] px-[2px] dark:bg-linear-to-r from-purple-500 to-indigo-600"
+              className="group hidden relative md:inline-flex transition-all hover:scale-105 items-center justify-center rounded-lg font-normal text-sm back-drop-b"
             >
-              <button className="px-4 py-2 rounded-lg  bg-[#0F001F]   font-extralight text-white cursor-pointer">
+              <button className="px-4 py-2.5 rounded-lg  backdrop-b bg[#0F001F] dark:text-white/90 cursor-pointer font-medium">
                 Get in Touch
               </button>
             </div>

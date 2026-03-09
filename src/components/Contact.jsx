@@ -55,7 +55,7 @@ const Contact = () => {
           {/* Left Side: Contact Info */}
           <div className="rounded-xl flex flex-col justify-between w-full md:w-[40%] p-5 lg:p-8 md:p-6 back-drop-b bg-primary dark:bg-primary-dark">
             <div>
-              <h2 className="text-2xl syne-font dark:text-white font-bold mb-8">
+              <h2 className="text-3xl syne-font dark:text-white/90 font-bold mb-8">
                 Get In Touch
               </h2>
               <div className="space-y-6">
@@ -65,7 +65,7 @@ const Contact = () => {
                     size={20}
                   />
                   <div>
-                    <p className="font-semibold text-black dark:text-white">
+                    <p className="font-semibold text-black dark:text-white/90">
                       Location
                     </p>
                     <p className="dark:text-gray-300 text-black text-sm">
@@ -80,7 +80,7 @@ const Contact = () => {
                     size={20}
                   />
                   <div>
-                    <p className="font-semibold text-black dark:text-white">
+                    <p className="font-semibold text-black dark:text-white/90">
                       Phone
                     </p>
                     <p className="dark:text-gray-300 text-black text-sm">
@@ -95,7 +95,7 @@ const Contact = () => {
                     size={20}
                   />
                   <div>
-                    <p className="font-semibold text-black dark:text-white">
+                    <p className="font-semibold text-black dark:text-white/90">
                       Email
                     </p>
                     <p className="dark:text-gray-300 text-black text-sm">
@@ -106,7 +106,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="mt-16">
-              <p className="text-sm uppercase tracking-wider mb-6 text-black font-medium dark:text-gray-300">
+              <p className="text-sm uppercase tracking-wider mb-6 text-black font-medium dark:text-gray-200">
                 Find me on
               </p>
 
@@ -158,7 +158,7 @@ const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols2 gap-4">
                 <div className="flex flex-col md:flex-row gap-3 justify-between">
                   <div className="w-full">
-                    <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
+                    <p className="text-black mb-1.5 uppercase dark:text-white/90 text-sm">
                       Full Name *
                     </p>
                     <input
@@ -170,13 +170,13 @@ const Contact = () => {
                     />
                   </div>
                   <div className="w-full">
-                    <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
-                      Email *
+                    <p className="text-black mb-1.5 uppercase dark:text-white/90 text-sm">
+                      Email Address *
                     </p>
                     <input
                       type="email"
                       name="user_email"
-                      placeholder="jhon@example.com"
+                      placeholder="you@example.com"
                       required
                       className="w-full back-drop-b dark:text-white rounded-lg text-sm py-3 px-2 outline-none focus:border-purple-500 transition-colors"
                     />
@@ -184,7 +184,7 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
+                <p className="text-black mb-1.5 uppercase dark:text-white/90 text-sm">
                   Subject *
                 </p>
                 <input
@@ -197,7 +197,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <p className="text-black mb-1.5 uppercase dark:text-white/80 text-sm">
+                <p className="text-black mb-1.5 uppercase dark:text-white/90 text-sm">
                   Message *
                 </p>
                 <textarea

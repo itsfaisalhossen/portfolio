@@ -18,7 +18,7 @@ const ProjectCard = ({ sProject }) => {
           alt="Ui Kit"
         />
         <div>
-          <h1 className="text-[16px] font-normal">{title}</h1>
+          <h1 className="text-[16px] font-medium">{title}</h1>
           <div className="text-xs flex gap-1.5 flex-wrap mt-3">
             {technologies.map((tgs, idx) => (
               <p
