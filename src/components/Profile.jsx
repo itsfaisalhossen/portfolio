@@ -7,7 +7,7 @@ import { MapPin } from "lucide-react";
 const Profile = () => {
   return (
     <section>
-      <div className="dark:text-white/85 pt-24 md:pt-32  minh-screen">
+      <div className="dark:text-white/85 pt-36 md:pt-52 lg:pt-60  minh-screen">
         <Container>
           <div className="flex items-center justify-between">
             <div className=" flex gap-2.5 items-center  back-drop-b rounded-lg py-2   px-2.5 md:px-3">
@@ -43,19 +43,18 @@ const Profile = () => {
                   <img className="w-8 text-white" src={profileIcon} alt="" />
                 </div>
               </div>
-              <p className="font-normal text-sm/6  my-5 md:my-8">
+
+              <p className="dark:font-extralight leading-6 text-cente text-[16px]  my-5 md:my-10">
                 I craft user-friendly, responsive, and visually striking digital
                 experiences that transform ideas into engaging, scalable, and
-                high-performing web applications. Using
-                <span className=" font-medium mx-1.5">
-                  JavaScript, ReactJs, NextJs, TailwindCSS with the
-                  'MERN-STACK'.
+                high-performing web applications.
+                <span className="font-normal">
+                  Specializing in JavaScript, React, Next.js, TailwindCSS & the
+                  MERN Stack
                 </span>
-                I specialize in combining sleek design with powerful
-                functionality, delivering websites and apps that are intuitive,
-                accessible, and future-ready. From smooth animations to secure
-                backends, I ensure every project is optimized for performance,
-                adaptability, and business growth.
+                — I combine sleek design with powerful functionality to deliver
+                websites and apps that are intuitive, accessible, fast, and
+                future-ready.
               </p>
 
               <div className="flex flex-col md:flex-row items-center justify-between gap-5">

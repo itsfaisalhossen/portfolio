@@ -1,11 +1,18 @@
 import { CodeXml, PanelsTopLeft, Contact, Headset } from "lucide-react";
 
+// export const navItem = [
+//   { name: "Profile", link: "#profile", icon: Contact },
+//   { name: "Skills", link: "#skills", icon: CodeXml },
+//   { name: "Projects", link: "#projects", icon: PanelsTopLeft },
+//   { name: "Contact", link: "#contact", icon: Headset },
+//   { name: "Services", link: "#services" },
+// ];
+
 export const navItem = [
   { name: "Profile", link: "#profile", icon: Contact },
   { name: "Skills", link: "#skills", icon: CodeXml },
   { name: "Projects", link: "#projects", icon: PanelsTopLeft },
   { name: "Contact", link: "#contact", icon: Headset },
-  // { name: "Services", link: "#services" },
 ];
 
 export const frontendFrameworks = [{ name: "ReactJs" }, { name: "NextJs" }];

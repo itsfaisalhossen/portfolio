@@ -16,11 +16,12 @@ const fetchProjects = async () => {
 
 const App = () => {
   const fetchPromise = fetchProjects();
+
   // Lenis smooth scroll
   useEffect(() => {
     const lenis = new Lenis({
       smooth: true,
-      lerp: 0.08, // smoothness
+      lerp: 0.2,
     });
 
     function raf(time) {
@@ -35,26 +36,31 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-primary dark:bg-primary-dark min-hscreen">
-      <div>
-        <Navbar />
-        <main id="profile" className="md:space-y-32 space-y-12">
-          <div id="profile-end" className="h-1"></div>
-          <BackToTopButton />
-          <Profile />
-          <Skills />
-          <Suspense
-            fallback={
-              <div className="flex items-center justify-center mt-12">
-                <Oval height={60} width={60} color="#0d0117" />
-              </div>
-            }
-          >
-            <Projects fetchPromise={fetchPromise} />
-          </Suspense>
-          <Contact />
-        </main>
+    <div className="bg-primary dark:bg-primary-dark min-h-screen relative">
+      {/* Gradient Background */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-[-80px] left-[-150px] w-[520px] h-[500px] bg-purple-600/25 rounded-full transition-all duration-1000 blur-[120px] animate-none"></div>
+        <div className="max-sm:hidden absolute bottom-[100px] -right-40 w-[480px] h-[480px] bg-pink-800/15 rounded-full transition-all duration-1000 blur-[100px] animate-none"></div>
+        <div className="absolute top-[40%] left-[30%] w-[560px] h-[560px] bg-blue-500/20 rounded-full transition-all duration-1000 blur-[150px] animate-none"></div>
       </div>
+
+      <Navbar />
+      <BackToTopButton />
+
+      <main id="profile" className="md:space-y-32 space-y-12">
+        <Profile />
+        <Skills />
+        <Suspense
+          fallback={
+            <div className="flex items-center justify-center mt-12">
+              <Oval height={60} width={60} color="#0d0117" />
+            </div>
+          }
+        >
+          <Projects fetchPromise={fetchPromise} />
+        </Suspense>
+        <Contact />
+      </main>
     </div>
   );
 };

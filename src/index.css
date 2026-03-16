@@ -7,7 +7,8 @@
 
 @theme {
   --color-primary: #fffcfc;
-  --color-primary-dark: #0d0117;
+  --color-primary-dark: #020003;
+  /* --color-primary-dark: #0d0117; */
 }
 
 * {
@@ -62,8 +63,16 @@ section {
 }
 
 .back-drop-b {
-  @apply border border-black/20 dark:bg-white/5 dark:backdrop-blur-[10px] dark:border-white/20;
+  @apply border border-white bg-white/20 backdrop-blur-xl backdrop-saturate-150 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:bg-white/5 dark:border-white/10 dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)];
 }
+
+/* .back-drop-b {
+  @apply border border-black/20 bg-white/30 backdrop-blur-[10px] dark:bg-white/5 dark:backdrop-blur-[10px] dark:border-white/10;
+} */
+
+/* .back-drop-b {
+  @apply border border-black/20 dark:bg-white/5 dark:backdrop-blur-[10px] dark:border-white/10;
+} */
 
 .card-content {
   @apply p-2.5 md:p-3 rounded-xl;
@@ -75,4 +84,34 @@ section {
 
 .skil-cardTitle {
   @apply font-medium text-[16px] mb-2 dark:text-white/85;
+}
+
+/* Light mode scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 10px;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #120017;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #23002b;
+}
+
+.text-gradient-vibrant {
+  background: linear-gradient(to right, #a855f7, #ec4899, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

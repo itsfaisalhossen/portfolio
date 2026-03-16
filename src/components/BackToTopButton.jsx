@@ -4,43 +4,31 @@ const BackToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const marker = document.getElementById("profile-end");
-    if (!marker) return;
+    const handleScroll = () => {
+      setVisible(window.scrollY > 300);
+    };
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Profile section শেষ হলে visible হবে
-        setVisible(!entry.isIntersecting);
-      },
-      {
-        threshold: 0,
-      },
-    );
-
-    observer.observe(marker);
-
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleScrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.dispatchEvent(new CustomEvent("resetActiveNav"));
   };
 
   return (
     <button
       onClick={handleScrollTop}
       aria-label="Back to top"
-      className={`hidden md:flex backdrop-blur-sm fixed -bottom-16 right-6 lg:right-24 z-50 group w-12.5 h-12.5 items-center justify-center rounded-xl back-drop-b shadow-[0_0_0_4px_rgba(180,160,255,0.253)] overflow-hidden transition-all duration-500 ease-out
+      className={`hidden md:flex backdrop-blur-sm fixed bottom-14 right-6 lg:right-24 z-50 group w-12.5 h-12.5 items-center justify-center rounded-xl back-drop-b shadow-[0_0_0_4px_rgba(180,160,255,0.253)] overflow-hidden transition-all duration-500 ease-out
         ${
           visible
             ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 translate-y-6 scale-90 pointer-events-none"
+            : "opacity-0 translate-y-20 scale-90 pointer-events-none"
         }
         hover:w-35 hover:rounded-[50px]
-        hover:bg[rgb(181,160,255)]
+        hover:bg-[rgb(181,160,255)]
       `}
     >
       {/* Icon */}
@@ -55,12 +43,7 @@ const BackToTopButton = () => {
       </svg>
 
       {/* Text */}
-      <span
-        className="
-          absolute
-          dark:text-white text-[0px] transition-all duration-300 group-hover:text-[12px]
-        "
-      >
+      <span className="absolute dark:text-white text-[0px] transition-all duration-300 group-hover:text-[12px]">
         Back to Top
       </span>
     </button>
